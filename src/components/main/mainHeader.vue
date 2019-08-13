@@ -1,6 +1,6 @@
 <template>
 	<header id="header">
-		<h1 class="title">{{ globalTitle }}</h1>
+		<h1 class="title ff-myeongjo">{{ globalTitle }}</h1>
 
 		<button id="toggle-hidden-contents">
 			<span class="screen-reader-text">목차 열기 버튼</span>
