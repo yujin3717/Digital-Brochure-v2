@@ -11,11 +11,17 @@
 					<h3 class="text" v-html="slideItem.title"></h3>
 				</div> -->
 
-				<div class="background-image swiper-lazy"
+				<img class="background-image swiper-lazy" alt="PART 배경 이미지"
+					:data-src="slideItem.backgroundImage.normal"
+					:data-blur-background="slideItem.backgroundImage.blur"
+				>
+				<div class="spinner swiper-lazy-preloader"></div>
+
+				<!-- <div class="background-image swiper-lazy"
 					:data-background="slideItem.backgroundImage.normal"
 					:data-blur-background="slideItem.backgroundImage.blur">
 					<div class="spinner"></div>
-				</div>
+				</div> -->
 			</div>
 		</router-link>
 	</div>
@@ -39,7 +45,18 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Song+Myung&display=swap&subset=korean');
 
 .item {
-	height: 100vh;
+	height: 100%;
+
+	a {
+		display: block;
+		height: 100%;
+		box-shadow: 0 18px 24px rgba(0, 0, 0, 0.35);
+		overflow: hidden;
+
+		@include max-w(960) {
+			border-radius: 20px;
+		}
+	}
 
 	.item-inner {
 		position: relative;
@@ -57,41 +74,18 @@ export default {
 			z-index: 1;
 			width: 100%;
 			height: 100%;
-			background-size: cover;
-			background-position: center center;
-			background-repeat: no-repeat;
-
-			.spinner {
-				position: absolute;
-				top: 15px;
-				right: 15px;
-				z-index: -1;
-				width: 15px;
-				height: 15px;
-				border: 1px solid #000;
-				border-top-color: transparent;
-				border-radius: 50%;
-				transition: opacity 0.3s, visibility 0.3s;
-				animation: bg-lazy-spinner 0.4s linear infinite;
-			}
-
-			@keyframes bg-lazy-spinner {
-				0% { transform: rotate(0); }
-				100% { transform: rotate(360deg); }
-			}
-
-			&.swiper-lazy-loaded {
-				.spinner {
-					opacity: 0;
-					visibility: hidden;
-				}
-			}
+			object-fit: cover;
+			object-position: center center;
+			overflow: hidden;
 		}
 
 		@include max-w(960) {
 			padding: 67px 30px;
 			border-radius: 20px;
-			box-shadow: 0 18px 24px rgba(0, 0, 0, 0.35);
+
+			.background-image {
+				border-radius: 20px;
+			}
 		}
 	}
 
