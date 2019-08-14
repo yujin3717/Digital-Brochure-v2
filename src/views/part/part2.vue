@@ -7,7 +7,7 @@
 		<main id="part-container">
 			<section class="container">
 
-				<h2 class="title ff-myeongjo">신촌맥주축제,</h2>
+				<h2 class="title ff-myeongjo">신촌맥주축제</h2>
 
 				<div class="left-image">
 					<img src="@/assets/images/contents/part2/top@1x.jpg" alt="축제 이미지"
@@ -35,19 +35,18 @@
 
 				<div class="bottom">
 					<img src="@/assets/images/contents/part2/01@1x.jpg" alt="이미지 01"
-						srcset="@/assets/images/contents/part2/01@2x.jpg 2x" class="img01">
+						 srcset="@/assets/images/contents/part2/01@2x.jpg 2x" class="img01">
 					<img src="@/assets/images/contents/part2/02@1x.jpg" alt="이미지 02"
-						srcset="@/assets/images/contents/part2/02@2x.jpg 2x"class="img02">
+						 srcset="@/assets/images/contents/part2/02@2x.jpg 2x" class="img02">
 					<img src="@/assets/images/contents/part2/03@1x.jpg" alt="이미지 03"
-						srcset="@/assets/images/contents/part2/03@2x.jpg 2x"class="img03">
+						 srcset="@/assets/images/contents/part2/03@2x.jpg 2x" class="img03">
 
 					<div class="img-title">2019년 신촌맥주축제<br>감성 한 줄, 맥주 한 잔</div>
-					<div class="caption">매년 다른 "Curation"을 통하여 새로운 맥주문화를<br>제시 하였던 신촌 맥주축제에서는 올해 20-30세대가<br>소비하는 글과 감성 그리고 건전한 맥주문화를 컨셉으로<br>
-					제5회 신촌맥주축제를 준비하였습니다.</div>
+					<div class="caption">매년 다른 "Curation"을 통하여 새로운 맥주문화를<br>제시 하였던 신촌 맥주축제에서는 올해 20-30세대가<br>소비하는 글과 감성 그리고 건전한 맥주문화를 컨셉으로<br>제5회 신촌맥주축제를 준비하였습니다.</div>
 
 					<div class="logo">
 						<img src="@/assets/images/contents/part2/m_logo@2x@1x.png" alt="이미지 03"
-						srcset="@/assets/images/contents/part2/m_logo@2x@2x.png 2x">
+							 srcset="@/assets/images/contents/part2/m_logo@2x@2x.png 2x">
 					</div>
 				</div>
 			</section>
@@ -67,10 +66,12 @@ export default {
 
 
 <style lang="scss" scoped>
-
 	#part-container {
+		background-color: #f5f5f5;
 
 		.container {
+			max-width: 375px;
+			background-color: #fff;
 
 			.title {
 				color: #09170d;
@@ -83,6 +84,10 @@ export default {
 			.left-image {
 				position: relative;
 				padding-left: 15px;
+
+				img {
+					width: calc( 100% - 80px );
+				}
 
 				.subtitle {
 					top: 394px;
@@ -98,9 +103,15 @@ export default {
 		}
 
 		.background {
-			max-width: 374px;
-			height: 160px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 220px;
 			margin-top: 30px;
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
 
 			.caption {
 				color: #fff;
@@ -132,7 +143,7 @@ export default {
 			}
 
 			.caption {
-				margin-bottom: 42px;
+				margin-bottom: 20px;
 				color: #09170d;
 				font-size: 15px;
 			}
@@ -144,7 +155,7 @@ export default {
 
 			.culture {
 				margin: 0 auto;
-				margin-top: 40px;
+				margin-top: 25px;
 				margin-bottom: 13px;
 				width: 140px;
 				height: 140px;
@@ -161,7 +172,7 @@ export default {
 		.bottom {
 			position: relative;
 			margin-top: 40px;
-			background-color: #f9f9f9;
+			background-color: #ececec;
 
 			.img01 {
 				position: absolute;
@@ -194,9 +205,9 @@ export default {
 			}
 
 			.logo {
-				padding: 18px 0 90px 300px;
+				padding: 70px 15px 30px 0;
+				text-align: right;
 			}
 		}
 	}
-
 </style>

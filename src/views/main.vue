@@ -1,5 +1,10 @@
 <template>
 	<div id="wrap">
+		<transition name="fade-out">
+			<!-- cover 컴포넌트에서 coverParent 라는 이벤트 수신을 위해 v-on:coverParent를 붙였습니다. -->
+			<cover v-if="show" v-on:coverParent="coverControl" />
+		</transition>
+
 		<mainHeader />
 
 		<div id="main">
@@ -26,16 +31,21 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import Swiper from 'swiper/dist/js/swiper.js';
 
+import cover from '@/components/cover.vue';
 import mainHeader from '@/components/main/mainHeader.vue';
 import mainFooter from '@/components/main/mainFooter.vue';
 import mainSliderItem from '@/components/main/mainSliderItem.vue';
 import hiddenContents from '@/components/main/hiddenContents.vue';
 
+var EventBus = new Vue();
+
 export default {
 	name: 'mainpage',
 	components: {
+		cover,
 		mainHeader,
 		mainFooter,
 		mainSliderItem,
@@ -43,6 +53,7 @@ export default {
 	},
 	data() {
 		return {
+			show: false,
 			slideItemData: [
 				{
 					part: 1,
@@ -68,14 +79,14 @@ export default {
 						blur:   require('@/assets/images/contents/part3/background-blur.jpg'),
 					},
 				},
-				{
+				/* {
 					part: 4,
 					title: '브루<div style="margin: 0 auto; width: 3px; height: 100px; background-color: #fff;"></div>어리',
 					backgroundImage: {
 						normal: require('@/assets/images/contents/part4/background.jpg'),
 						blur:   require('@/assets/images/contents/part4/background-blur.jpg'),
 					},
-				},
+				}, */
 				{
 					part: 5,
 					title: '지난<div style="margin: 0 auto; width: 3px; height: 100px; background-color: #fff;"></div>축제',
@@ -91,24 +102,22 @@ export default {
 		var blurBackgroundElm = document.querySelector('.blur-background');
 
 		var contentsSlider = new Swiper('.swiper-container', {
+			init: false,
 			mousewheel: true,
 			resistanceRatio: 0.5,
 			slidesPerView: 2.5,
 			loop: false,
-			preloadImages: true,
+			preloadImages: false,
 			lazy: {
-				loadPrevNext: true,
-				loadPrevNextAmount: 3,
+				loadPrevNext: false,
+				loadOnTransitionStart: true,
 			},
 			breakpoints: {
 				960: {
 					slidesPerView: 1.2,
 					direction: 'vertical',
+					resistanceRatio: 0.85,
 					centeredSlides: true,
-					lazy: {
-						loadPrevNext: true,
-						loadPrevNextAmount: 1,
-					},
 				},
 			},
 			on: {
@@ -145,7 +154,28 @@ export default {
 				},
 			},
 		});
+
+		this.$nextTick(function() {
+			contentsSlider.init();
+		});
+
+		// ios에서 브라우저 하단 버튼bar 때문에 높이가 잘려 보이는 문제 해결
+		window.onresize = function() {
+			document.body.height = window.innerHeight;
+		}
+		window.onresize();
 	},
+	methods: {
+		coverControl: function() {
+			var self = this;
+
+ 			self.$nextTick(function() {
+				setTimeout(function() {
+					self.show = !self.show;
+				}, 300);
+			});
+		}
+	}
 };
 </script>
 
@@ -189,5 +219,19 @@ export default {
 			display: block;
 		}
 	}
+}
+
+.fade-out-enter-active,
+.fade-out-leave-active {
+	transition: opacity 0.7s;
+}
+.fade-out-enter,
+.fade-out-leave-to {
+	opacity: 0;
+}
+
+@keyframes fadeOut {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
 }
 </style>
