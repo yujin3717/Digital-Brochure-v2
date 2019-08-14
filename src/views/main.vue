@@ -53,7 +53,7 @@ export default {
 	},
 	data() {
 		return {
-			show: true,
+			show: false,
 			slideItemData: [
 				{
 					part: 1,
@@ -79,14 +79,14 @@ export default {
 						blur:   require('@/assets/images/contents/part3/background-blur.jpg'),
 					},
 				},
-				{
+				/* {
 					part: 4,
 					title: '브루<div style="margin: 0 auto; width: 3px; height: 100px; background-color: #fff;"></div>어리',
 					backgroundImage: {
 						normal: require('@/assets/images/contents/part4/background.jpg'),
 						blur:   require('@/assets/images/contents/part4/background-blur.jpg'),
 					},
-				},
+				}, */
 				{
 					part: 5,
 					title: '지난<div style="margin: 0 auto; width: 3px; height: 100px; background-color: #fff;"></div>축제',
@@ -169,10 +169,9 @@ export default {
 		coverControl: function() {
 			var self = this;
 
- 			this.$nextTick(function() {
+ 			self.$nextTick(function() {
 				setTimeout(function() {
 					self.show = !self.show;
-					console.log('wow');
 				}, 300);
 			});
 		}

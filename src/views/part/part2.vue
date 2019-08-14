@@ -7,7 +7,7 @@
 		<main id="part-container">
 			<section class="container">
 
-				<h2 class="title ff-myeongjo">신촌맥주축제,</h2>
+				<h2 class="title ff-myeongjo">신촌맥주축제</h2>
 
 				<div class="left-image">
 					<img src="@/assets/images/contents/part2/top@1x.jpg" alt="축제 이미지"
@@ -67,7 +67,12 @@ export default {
 
 <style lang="scss" scoped>
 	#part-container {
+		background-color: #f5f5f5;
+
 		.container {
+			max-width: 375px;
+			background-color: #fff;
+
 			.title {
 				color: #09170d;
 				font-size: 50px;
@@ -79,6 +84,10 @@ export default {
 			.left-image {
 				position: relative;
 				padding-left: 15px;
+
+				img {
+					width: calc( 100% - 80px );
+				}
 
 				.subtitle {
 					top: 394px;
@@ -94,9 +103,15 @@ export default {
 		}
 
 		.background {
-			max-width: 374px;
-			height: 160px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 220px;
 			margin-top: 30px;
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
 
 			.caption {
 				color: #fff;
@@ -128,7 +143,7 @@ export default {
 			}
 
 			.caption {
-				margin-bottom: 42px;
+				margin-bottom: 20px;
 				color: #09170d;
 				font-size: 15px;
 			}
@@ -140,7 +155,7 @@ export default {
 
 			.culture {
 				margin: 0 auto;
-				margin-top: 40px;
+				margin-top: 25px;
 				margin-bottom: 13px;
 				width: 140px;
 				height: 140px;
@@ -157,7 +172,7 @@ export default {
 		.bottom {
 			position: relative;
 			margin-top: 40px;
-			background-color: #f9f9f9;
+			background-color: #ececec;
 
 			.img01 {
 				position: absolute;
@@ -190,7 +205,8 @@ export default {
 			}
 
 			.logo {
-				padding: 18px 0 90px 300px;
+				padding: 70px 15px 30px 0;
+				text-align: right;
 			}
 		}
 	}

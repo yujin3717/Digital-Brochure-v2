@@ -7,12 +7,11 @@
 		<main id="part-container">
 			<section class="container">
 
-				<h2 class="title ff-myeongjo">놀면 뭐 하나...</h2>
+				<h2 class="title ff-myeongjo">놀면<br>뭐 하나</h2>
 
 				<div class="left-image">
 					<img src="@/assets/images/contents/part1/top_img@1x.png" alt="맥주 이미지"
 						 srcset="@/assets/images/contents/part1/top_img@2x.png 2x">
-					<div class="backcolor-top"></div>
 				</div>
 
 				<div class="subtitle ff-myeongjo">재밌겠지</div>
@@ -48,87 +47,82 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 	#part-container {
+		background-color: #f5f5f5;
 
 		.container {
+			max-width: 375px;
+			background-color: #fff;
 
 			.title {
+				padding: 85px 0 10px 15px;
 				color: #09170d;
-				font-size: 50px;
+				font-size: 72px;
 				font-weight: 400;
-				line-height: 55px;
-				padding: 85px 0px 40px 15px;
+				line-height: 72px;
 			}
 
 			.left-image {
-					position: relative;
+				position: relative;
 
-				.backcolor-top {
-					position: absolute;
-					top: 25px;
-					left: 20px;
-					width: 300px;
-					height: 380px;
-					background-image: linear-gradient(180deg, #48c6ef 0%, #6f86d6 100%);
-					opacity: 0.3;
-					z-index: -99;
+				img {
+					width: 100%;
 				}
 			}
 
 			.subtitle {
-				padding: 30px 0px 50px 207px;
+				margin-top: -10px;
+				padding: 0 0 50px 0;
+				font-size: 72px;
+				text-align: right;
 				color: #09170d;
-				font-size: 40px;
 			}
 
 			.right-image {
-				padding-left: 71px;
 				position: relative;
+				padding-left: 71px;
 
 				.backcolor-bottom {
 					position: absolute;
 					top: 10px;
 					left: 62px;
+					z-index: -99;
 					width: 303px;
 					height: 267px;
 					background-image: linear-gradient(180deg, #a8edea 0%, #fed6e3 100%);
 					opacity: 0.3;
-					z-index: -99;
 				}
 
 				.caption {
 					padding-top: 30px;
-					color: #09170d;
 					font-size: 18px;
+					color: #09170d;
 					line-height: 29px;
 
 					.bold {
-					/* Text style for "맥주!" */
-					font-family: "Nanum Gothic Extra Bold";
-					font-weight: 700;
+						font-weight: 700;
 					}
 				}
 			}
 
 			.center-image {
-				text-align: center;
 				padding-top: 85px;
+				text-align: center;
 
 				.caption {
 					padding-top: 20px;
+					font-size: 24px;
 					color: #09170d;
-					font-size: 18px;
 
 					.bold {
-						font-family: "Nanum Gothic Extra Bold";
 						font-weight: 700;
 					}
 				}
 			}
 
 			.logo {
-				padding: 55px 0px 90px 159px;
+				padding: 55px 0 90px 0;
+				text-align: center;
 			}
 		}
 	}
