@@ -14,9 +14,12 @@
 					<div class="subtitle ff-myeongjo">맥주 한 잔</div>
 				</div>
 
-				<video class="video">
-
-				</video>
+				<div class="video-block">
+					<video controls>
+						<source src="@/assets/video/beer_44k-iphone8.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
 
 				<div class="inform">감성에 맥주를 더하다,<br>2019 제5회 신촌 맥주 축제<br>P R O G R A M</div>
 
@@ -70,17 +73,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 	#part-container {
-
 		.container {
+			max-width: 375px;
+			background-color: #fff;
 
 			.top-image {
 				margin-top: 85px;
-				padding: 0 10px 0 10px;
-				width: 375px;
-				height: 450px;
+				padding: 0 15px 0;
 				color: #fff;
+				background-repeat: no-repeat;
 
 				.title {
 					font-size: 50px;
@@ -94,16 +96,25 @@ export default {
 					padding-top: 15px;
 				}
 				.subtitle {
-					padding: 50px 0 0 165px;
-					font-size: 40px;
+					padding: 40px 0 0 0;
+					font-size: 50px;
+					text-align: right;
 				}
 			}
 
-			.video {
+			.video-block {
+				position: relative;
 				margin-top: 50px;
-				width: 375px;
-				height: 210px;
+				padding-top: 56.25%;
 				background-color: #d8d8d8;
+
+				video {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
 			}
 
 			.inform {
@@ -115,7 +126,10 @@ export default {
 			}
 
 			.figure {
-				margin: 40px 0 0 55px;
+				padding-top: 40px;
+				margin: 0 auto 20px;
+				max-width: 264px;
+				width: 100%;
 
 				.caption {
 					margin-top: 13px;
@@ -127,20 +141,24 @@ export default {
 				padding-left: 0;
 
 				.box-title {
-					margin-left: 55px;
 					margin-bottom: 20px;
+					margin: 0 auto 20px;
+					max-width: 264px;
+					width: 100%;
 					font-size: 15px;
 					font-weight: 700;
 					color: #09170d;
 				}
 				.caption {
-					margin-top: 10px;
-					margin-left: 55px;
+					padding-top: 10px;
+					margin: 0 auto 20px;
+					max-width: 264px;
+					width: 100%;
 				}
 			}
 
 			.logo {
-				margin: 44px 0 90px 300px;
+				margin: 50px 0 90px 300px;
 			}
 		}
 	}

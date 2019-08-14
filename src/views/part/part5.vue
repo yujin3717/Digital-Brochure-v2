@@ -56,7 +56,6 @@
 										 srcset="@/assets/images/contents/part5/img_8@2x.jpg 2x">
 								</div>
 
-
 							</div>
 
 							<div class="swiper-arrows">
@@ -70,6 +69,7 @@
 								</button>
 							</div>
 						</div>
+						<div class="pagination"></div>
 
 					</div>
 
@@ -99,6 +99,10 @@ export default {
 			navigation: {
 				nextEl: '.swiper-arrows .next-arrow',
 				prevEl: '.swiper-arrows .prev-arrow',
+			},
+			pagination: {
+				el: '.slider-area .pagination',
+				type: 'fraction',
 			}
 		});
 	}
@@ -109,19 +113,23 @@ export default {
 <style lang="scss" scoped>
 
 	#part-container {
-
 		.container {
+			max-width: 375px;
+			background-color: #fff;
 
 			.top-image {
 				margin-top: 85px;
-				padding: 100px 0 0 141px;
-				width: 374px;
+				padding-top: 100px;
+				max-width: 374px;
 				height: 450px;
 
 				.border {
+					margin: 0 auto;
 					width: 93px;
 					height: 250px;
 					color: #fff;
+					background-size: cover;
+					background-position: center center;
 					background-repeat: no-repeat;
 
 					.caption01 {
@@ -158,6 +166,7 @@ export default {
 
 							.swiper-slide {
 								text-align: center;
+								padding: 0 30px;
 							}
 						}
 
@@ -193,11 +202,17 @@ export default {
 							}
 						}
 					}
+					.pagination {
+						padding-top: 20px;
+						margin: 0 auto;
+						text-align: center;
+					}
 				}
 			}
 
 			.logo {
-				padding: 100px 0 90px 300px;
+				float: right;
+				padding: 100px 15px 90px;
 			}
 		}
 	}
