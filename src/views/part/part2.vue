@@ -7,7 +7,7 @@
 		<main id="part-container">
 			<section class="container">
 
-				<h2 class="title ff-myeongjo">신촌맥주축제,</h2>
+				<h2 class="title ff-myeongjo">신촌맥주축제</h2>
 
 				<div class="left-image">
 					<img src="@/assets/images/contents/part2/top@1x.jpg" alt="축제 이미지"
@@ -34,14 +34,12 @@
 				</div>
 
 				<div class="bottom">
-					<div class="icon">
-						<img src="@/assets/images/contents/part2/01@1x.jpg" alt="이미지 01"
-							 srcset="@/assets/images/contents/part2/01@2x.jpg 2x" class="img01">
-						<img src="@/assets/images/contents/part2/03@1x.jpg" alt="이미지 03"
-							 srcset="@/assets/images/contents/part2/03@2x.jpg 2x" class="img03">
-						<img src="@/assets/images/contents/part2/02@1x.jpg" alt="이미지 02"
-							 srcset="@/assets/images/contents/part2/02@2x.jpg 2x" class="img02">
-					</div>
+					<img src="@/assets/images/contents/part2/01@1x.jpg" alt="이미지 01"
+						 srcset="@/assets/images/contents/part2/01@2x.jpg 2x" class="img01">
+					<img src="@/assets/images/contents/part2/02@1x.jpg" alt="이미지 02"
+						 srcset="@/assets/images/contents/part2/02@2x.jpg 2x" class="img02">
+					<img src="@/assets/images/contents/part2/03@1x.jpg" alt="이미지 03"
+						 srcset="@/assets/images/contents/part2/03@2x.jpg 2x" class="img03">
 
 					<div class="img-title">2019년 신촌맥주축제<br>감성 한 줄, 맥주 한 잔</div>
 					<div class="caption">매년 다른 "Curation"을 통하여 새로운 맥주문화를<br>제시 하였던 신촌 맥주축제에서는 올해 20-30세대가<br>소비하는 글과 감성 그리고 건전한 맥주문화를 컨셉으로<br>제5회 신촌맥주축제를 준비하였습니다.</div>
@@ -91,6 +89,10 @@ export default {
 					width: calc( 100% - 80px );
 				}
 
+				img {
+					width: calc( 100% - 80px );
+				}
+
 				.subtitle {
 					position: absolute;
 					right: -84px;
@@ -104,12 +106,12 @@ export default {
 		}
 
 		.background {
-			margin-top: 30px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			width: 100%;
-			height: 160px;
+			height: 220px;
+			margin-top: 30px;
 			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
