@@ -77,22 +77,25 @@ export default {
 				color: #09170d;
 				font-size: 50px;
 				font-weight: 400;
-				line-height: 55px;
-				padding: 85px 0px 40px 15px;
+				padding: 85px 10px 40px 10px;
 			}
 
 			.left-image {
 				position: relative;
 				padding-left: 15px;
+				padding-right: 15px;
+
+				img {
+					width: calc( 100% - 80px );
+				}
 
 				img {
 					width: calc( 100% - 80px );
 				}
 
 				.subtitle {
-					top: 394px;
-					left: 305px;
 					position: absolute;
+					right: -84px;
 					transform: rotate(-90deg);
 					color: #09170d;
 					font-size: 40px;
@@ -170,27 +173,35 @@ export default {
 		}
 
 		.bottom {
-			position: relative;
 			margin-top: 40px;
 			background-color: #ececec;
 
-			.img01 {
-				position: absolute;
-				padding: 41px 0 0 15px;
+			.icon {
+				position: relative;
+				padding: 0 15px;
+				overflow: hidden;
+
+				.img01 {
+					padding: 41px 0 0 0;
+				}
+
+				.img02 {
+					position: relative;
+					z-index: 2;
+					float: left;
+					margin-top: -70px;
+					margin-left: 50px;
+				}
+
+				.img03 {
+					float: right;
+					margin-top: 50px;
+				}
 			}
 
-			.img02 {
-				position: absolute;
-				padding: 89px 0 0 65px;
-			}
-
-			.img03 {
-				position: absolute;
-				padding: 50px 0 0 231px;
-			}
 
 			.img-title {
-				padding-top: 235px;
+				padding-top: 18px;
 				padding-left: 15px;
 				color: #09170d;
 				font-size: 18px;
@@ -198,8 +209,7 @@ export default {
 			}
 
 			.caption {
-				padding-top: 17px;
-				padding-left: 15px;
+				padding: 17px 15px 0 15px;
 				color: #09170d;
 				font-size: 15px;
 			}
