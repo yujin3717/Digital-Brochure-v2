@@ -167,8 +167,13 @@ export default {
 	},
 	methods: {
 		coverControl: function() {
+			var self = this;
+
  			this.$nextTick(function() {
-				this.show = !this.show;
+				setTimeout(function() {
+					self.show = !self.show;
+					console.log('wow');
+				}, 300);
 			});
 		}
 	}
