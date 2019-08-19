@@ -47,8 +47,10 @@
 					<div class="caption">매년 다른 "Curation"을 통하여 새로운 맥주문화를<br>제시 하였던 신촌 맥주축제에서는 올해 20-30세대가<br>소비하는 글과 감성 그리고 건전한 맥주문화를 컨셉으로<br>제5회 신촌맥주축제를 준비하였습니다.</div>
 
 					<div class="logo">
-						<img src="@/assets/images/contents/part2/m_logo@2x@1x.png" alt="이미지 03"
-							 srcset="@/assets/images/contents/part2/m_logo@2x@2x.png 2x">
+						<a href="http://www.moounga.co.kr" target="_blank">
+							<img src="@/assets/images/contents/part2/m_logo@2x@1x.png" alt="이미지 03"
+								 srcset="@/assets/images/contents/part2/m_logo@2x@2x.png 2x">
+						</a>
 					</div>
 				</div>
 			</section>
@@ -213,8 +215,12 @@ export default {
 			}
 
 			.logo {
-				padding: 70px 15px 30px 0;
 				text-align: right;
+				padding: 100px 15px 90px;
+
+				a {
+					display: inline-block;
+				}
 			}
 		}
 	}
