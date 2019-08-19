@@ -76,8 +76,10 @@
 				</div>
 
 				<div class="logo">
-					<img src="@/assets/images/contents/part5/m_logo@2x@1x.png" alt="로고"
-						 srcset="@/assets/images/contents/part5/m_logo@2x@2x.png 2x">
+					<a href="http://www.moounga.co.kr" target="_blank">
+						<img src="@/assets/images/contents/part5/m_logo@2x@1x.png" alt="로고"
+							 srcset="@/assets/images/contents/part5/m_logo@2x@2x.png 2x">
+					</a>
 				</div>
 
 			</section>
@@ -211,8 +213,12 @@ export default {
 			}
 
 			.logo {
-				float: right;
+				text-align: right;
 				padding: 100px 15px 90px;
+
+				a {
+					display: inline-block;
+				}
 			}
 		}
 	}

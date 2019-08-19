@@ -19,7 +19,6 @@
 				<div class="right-image">
 					<img src="@/assets/images/contents/part1/img_1@1x.jpg" alt="맥주 이미지"
 						 srcset="@/assets/images/contents/part1/img_1@2x.jpg 2x">
-					<div class="backcolor-bottom"></div>
 					<div class="caption">혼자라면 와인도 오케이<br>둘이라면 소주가 낫지.<br>하지만 여럿이라면 단연코 <span class="bold">맥주!</span><br>즐거움에 맥주가 빠질 수 없지.</div>
 				</div>
 
@@ -30,8 +29,10 @@
 				</div>
 
 				<div class="logo">
-					<img src="@/assets/images/contents/part1/m_logo@2x@1x.png" alt="로고 이미지"
-						 srcset="@/assets/images/contents/part1/m_logo@2x@2x.png 2x">
+					<a href="http://www.moounga.co.kr" target="_blank">
+						<img src="@/assets/images/contents/part1/m_logo@2x@1x.png" alt="로고 이미지"
+							 srcset="@/assets/images/contents/part1/m_logo@2x@2x.png 2x">
+					</a>
 				</div>
 			</section>
 		</main>
@@ -82,16 +83,6 @@ export default {
 				position: relative;
 				padding-left: 71px;
 
-				.backcolor-bottom {
-					position: absolute;
-					top: 10px;
-					left: 62px;
-					z-index: -99;
-					width: 303px;
-					height: 267px;
-					background-image: linear-gradient(180deg, #a8edea 0%, #fed6e3 100%);
-					opacity: 0.3;
-				}
 
 				.caption {
 					padding-top: 30px;
@@ -123,6 +114,10 @@ export default {
 			.logo {
 				padding: 55px 0 90px 0;
 				text-align: center;
+
+				a {
+					display: inline-block;
+				}
 			}
 		}
 	}
