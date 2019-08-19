@@ -1,8 +1,6 @@
 <template>
 	<div id="part">
-		<header id="part-header">
-			<h1 class="screen-reader-text">{{ globalTitle }}</h1>
-		</header>
+		<partHeader />
 
 		<main id="part-container">
 			<section class="container">
@@ -42,18 +40,30 @@
 </template>
 
 <script>
-export default {
-	name: 'part1'
-}
+	import partHeader from '@/components/part/header.vue';
+
+	export default {
+		name: 'part1',
+		components: {
+			partHeader
+		},
+		data() {
+			return {
+				showCover: false
+			}
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
-	#part-container {
-		background-color: #f5f5f5;
+	#part {
+		&-container {
+			background-color: #f5f5f5;
 
-		.container {
-			max-width: 375px;
-			background-color: #fff;
+			.container {
+				max-width: 375px;
+				background-color: #fff;
+			}
 
 			.title {
 				padding: 85px 0 10px 15px;

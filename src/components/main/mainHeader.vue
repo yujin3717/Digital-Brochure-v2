@@ -66,7 +66,6 @@ export default {
 
 	@include max-w(960) {
 		padding: 30px 15px 0;
-		justify-content: flex-end;
 
 		.title {
 			display: none;

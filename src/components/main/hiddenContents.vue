@@ -1,6 +1,6 @@
 <template>
 	<div id="hidden-contents">
-		<div id="hidden-contents-inner">
+		<div id="hidden-contents-inner" class="ff-myeongjo">
 			<div class="title">{{ globalTitle }}</div>
 
 			<div class="contents">
@@ -54,10 +54,10 @@ export default {
 					part: 3,
 					title: '감성 한 줄 맥주 한 잔',
 				},
-				{
+				/*{
 					part: 4,
 					title: '맥주축제 in 신촌',
-				},
+				},*/
 				{
 					part: 5,
 					title: '2018 신촌맥주축제',
