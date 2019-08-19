@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<router-view/>
+		<router-view />
 	</div>
 </template>
 
@@ -87,4 +87,18 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/reset.scss';
 @import '@/assets/scss/core.scss';
+
+.fade-out-enter-active,
+.fade-out-leave-active {
+	transition: opacity 0.7s;
+}
+.fade-out-enter,
+.fade-out-leave-to {
+	opacity: 0;
+}
+
+@keyframes fadeOut {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
 </style>

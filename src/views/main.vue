@@ -1,8 +1,8 @@
 <template>
 	<div id="wrap">
-		<transition name="fade-out">
-			<!-- cover 컴포넌트에서 coverParent 라는 이벤트 수신을 위해 v-on:coverParent를 붙였습니다. -->
-			<cover v-if="show" v-on:coverParent="coverControl" />
+		<transition name="fade-out" appear>
+			<!-- cover.vue 컴포넌트에서 coverParent 라는 이벤트 수신을 위해 v-on:coverParent를 붙였습니다. -->
+			<cover v-if="showCover" v-on:coverParent="coverControl" />
 		</transition>
 
 		<mainHeader />
@@ -53,7 +53,7 @@ export default {
 	},
 	data() {
 		return {
-			show: false,
+			showCover: true,
 			slideItemData: [
 				{
 					part: 1,
@@ -94,23 +94,45 @@ export default {
 						normal: require('@/assets/images/contents/part5/background.jpg'),
 						blur:   require('@/assets/images/contents/part5/background-blur.jpg'),
 					},
-				},
-			]
+				}
+			],
+			slideNum: null,
 		}
+	},
+	beforeRouteEnter(to, from, next) {
+		/**
+		 * 2019-08-19 part 내지에서 뒤로가기 했을 때 해당 파트의 카드로 이동되게 하는 스크립트
+		 * 코드 개선 필요
+		 */
+		if ( from !== null && from.name !== null ) {
+			next(vm => {
+				vm.setPrevData( from );
+			});
+		} else {
+			next(); // next를 해야 스크립트가 멈추지 않고 계속 작동한다 (return true와 비슷한 개념)
+		}
+	},
+	beforeRouteUpdate(to, from, next) {
+		/**
+		 * 2019-08-19 part 내지에서 뒤로가기 했을 때 해당 파트의 카드로 이동되게 하는 스크립트
+		 * 코드 개선 필요
+		 */
+		this.slideNum = null;
+		this.setPrevData( from );
+		next(); // next를 해야 스크립트가 멈추지 않고 계속 작동한다 (return true와 비슷한 개념)
 	},
 	mounted() {
 		var blurBackgroundElm = document.querySelector('.blur-background');
 
 		var contentsSlider = new Swiper('.swiper-container', {
-			init: false,
 			mousewheel: true,
 			resistanceRatio: 0.5,
 			slidesPerView: 2.5,
 			loop: false,
 			preloadImages: false,
 			lazy: {
-				loadPrevNext: false,
-				loadOnTransitionStart: true,
+				loadPrevNext: true,
+				loadPrevNextAmount: 2,
 			},
 			breakpoints: {
 				960: {
@@ -155,15 +177,8 @@ export default {
 			},
 		});
 
-		this.$nextTick(function() {
-			contentsSlider.init();
-		});
-
-		// ios에서 브라우저 하단 버튼bar 때문에 높이가 잘려 보이는 문제 해결
-		window.onresize = function() {
-			document.body.height = window.innerHeight;
-		}
-		window.onresize();
+		// ios에서 브라우저 하단 버튼bar 때문에 높이가 잘려 보이는 문제를 해결하기 위해 추가
+		this.iosHeightFix();
 	},
 	methods: {
 		coverControl: function() {
@@ -171,11 +186,31 @@ export default {
 
  			self.$nextTick(function() {
 				setTimeout(function() {
-					self.show = !self.show;
-				}, 300);
+					self.showCover = !self.showCover;
+				}, 400);
 			});
+		},
+		iosHeightFix: function() {
+			window.onresize = function() {
+				document.body.height = window.innerHeight;
+			}
+			window.onresize();
+		},
+		setPrevData: function(from) {
+			/**
+			 * 2019-08-19 part 내지에서 뒤로가기 했을 때 해당 파트의 카드로 이동되게 하는 스크립트
+			 * 코드 개선 필요
+			 */
+			var self    = this;
+			var partNum = parseInt( from.name.replace('part', '') );
+			var slider  = document.querySelector('#main .swiper-container').swiper;
+
+			self.slideNum  = partNum - 1;
+			self.showCover = false;
+
+			slider.slideTo( self.slideNum, 0 );
 		}
-	}
+	},
 };
 </script>
 
@@ -219,19 +254,5 @@ export default {
 			display: block;
 		}
 	}
-}
-
-.fade-out-enter-active,
-.fade-out-leave-active {
-	transition: opacity 0.7s;
-}
-.fade-out-enter,
-.fade-out-leave-to {
-	opacity: 0;
-}
-
-@keyframes fadeOut {
-	0% { opacity: 1; }
-	100% { opacity: 0; }
 }
 </style>

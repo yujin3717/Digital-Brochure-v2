@@ -18,6 +18,14 @@ npm install --save scratchcard-js // 커버 액션용
 ## 수정내역
 
 ```
+2019-08-14
+
+1. [merge] 유진씨 작업내용 merge
+2.
+```
+
+
+```
 2019-08-13
 [신규] @/views/part/part-template.vue
 1. 파트 뼈대를 안내하는 파일 추가

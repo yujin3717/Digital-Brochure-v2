@@ -42,7 +42,7 @@
 
 <script>
 export default {
-	name: 'part1',
+	name: 'part1'
 }
 </script>
 

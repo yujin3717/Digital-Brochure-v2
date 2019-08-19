@@ -95,8 +95,8 @@ export default {
 		closeHiddenContents: function(event) {
 			this.$el.classList.remove('active');
 		}
-	}
-}
+	},
+};
 </script>
 
 <style lang="scss" scoped>

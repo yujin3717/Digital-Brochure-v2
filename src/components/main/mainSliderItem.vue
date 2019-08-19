@@ -12,6 +12,7 @@
 				</div> -->
 
 				<img class="background-image swiper-lazy" alt="PART 배경 이미지"
+					src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 					:data-src="slideItem.backgroundImage.normal"
 					:data-blur-background="slideItem.backgroundImage.blur"
 				>
@@ -35,11 +36,11 @@ export default {
 			type: Object,
 			required: true
 		}
-	}
+	},
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/assets/scss/import/_mixin.scss';
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Song+Myung&display=swap&subset=korean');
