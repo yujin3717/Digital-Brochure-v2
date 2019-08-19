@@ -7,7 +7,7 @@
 		<main id="part-container">
 			<section class="container">
 
-				<h2 class="title ff-myeongjo">신촌맥주축제,</h2>
+				<h2 class="title ff-myeongjo">신촌맥주축제</h2>
 
 				<div class="left-image">
 					<img src="@/assets/images/contents/part2/top@1x.jpg" alt="축제 이미지"
