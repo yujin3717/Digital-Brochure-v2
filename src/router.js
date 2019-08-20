@@ -5,12 +5,12 @@ import Router from 'vue-router';
  * Router Lazy loading 을 위한 변경
  * https://router.vuejs.org/guide/advanced/lazy-loading.html
  */
-const Main     = () => import('./views/main.vue');
-const Part1    = () => import('./views/part/part1.vue');
-const Part2    = () => import('./views/part/part2.vue');
-const Part3    = () => import('./views/part/part3.vue');
-const Part4    = () => import('./views/part/part4.vue');
-const Part5    = () => import('./views/part/part5.vue');
+const Main = () => import('./views/main.vue');
+const Part1 = () => import('./views/part/part1.vue');
+const Part2 = () => import('./views/part/part2.vue');
+const Part3 = () => import('./views/part/part3.vue');
+const Part4 = () => import('./views/part/part4.vue');
+const Part5 = () => import('./views/part/part5.vue');
 const lastPart = () => import('./views/part/lastPart.vue');
 
 Vue.use(Router);

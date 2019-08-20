@@ -13,10 +13,10 @@ export default {
 	props: {
 		hiddenContentsSnsItem: {
 			type: Object,
-			required: true
-		}
-	}
-}
+			required: true,
+		},
+	},
+};
 </script>
 
 <style lang="scss" scoped>

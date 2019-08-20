@@ -7,10 +7,10 @@ export default {
 	props: {
 		hiddenContentsItem: {
 			type: Object,
-			required: true
-		}
-	}
-}
+			required: true,
+		},
+	},
+};
 </script>
 
 <style lang="scss" scoped>

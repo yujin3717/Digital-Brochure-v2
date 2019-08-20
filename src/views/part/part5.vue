@@ -1,8 +1,6 @@
 <template>
 	<div id="part">
-		<header id="part-header">
-			<h1 class="screen-reader-text">{{ globalTitle }}</h1>
-		</header>
+		<partHeader />
 
 		<main id="part-container">
 			<section class="container">
@@ -92,11 +90,20 @@
 
 <script>
 import Swiper from 'swiper/dist/js/swiper.js';
+import partHeader from '@/components/part/header.vue';
 
 export default {
 	name: 'part5',
+	components: {
+		partHeader,
+	},
+	data() {
+		return {
+			showCover: false,
+		};
+	},
 	mounted() {
-		var innerSlider = new Swiper('.swiper-container', {
+		const innerSlider = new Swiper('.swiper-container', {
 			slidesPerView: 1,
 			navigation: {
 				nextEl: '.swiper-arrows .next-arrow',
@@ -105,10 +112,10 @@ export default {
 			pagination: {
 				el: '.slider-area .pagination',
 				type: 'fraction',
-			}
+			},
 		});
-	}
-}
+	},
+};
 </script>
 
 

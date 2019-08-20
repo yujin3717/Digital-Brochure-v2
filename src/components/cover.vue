@@ -10,33 +10,35 @@
 import Vue from 'vue';
 import { ScratchCard, SCRATCH_TYPE } from 'scratchcard-js';
 
+const EventBus = new Vue();
+
 export default {
 	name: 'cover',
 	data() {
 		return {
-			coverBackground: require( '@/assets/images/cover/beer_cup.png' ),
-		}
+			coverBackground: require('@/assets/images/cover/beer_cup.png'),
+		};
 	},
 	mounted() {
-		var cover = this;
+		const cover = this;
 
-		const scContainer = document.getElementById('sc')
+		const scContainer = document.getElementById('sc');
 		const sc = new ScratchCard('#sc', {
 			scratchType: SCRATCH_TYPE.CIRCLE,
 			containerWidth: scContainer.offsetWidth,
 			containerHeight: 200,
-			imageForwardSrc: require( '@/assets/images/cover/full_logo_before.png' ),
-			imageBackgroundSrc: require( '@/assets/images/cover/full_logo_after.png' ),
+			imageForwardSrc: require('@/assets/images/cover/full_logo_before.png'),
+			imageBackgroundSrc: require('@/assets/images/cover/full_logo_after.png'),
 			clearZoneRadius: 50,
 			percentToFinish: 75,
-			callback: function () {
+			callback() {
 				// main 컴포넌트에 coverParent 이벤트를 보냅니다.
 				cover.$emit('coverParent');
-			}
+			},
 		});
 		sc.init();
-	}
-}
+	},
+};
 </script>
 
 <style lang="scss">

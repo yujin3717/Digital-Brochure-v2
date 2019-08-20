@@ -1,8 +1,6 @@
 <template>
 	<div id="part">
-		<header id="part-header">
-			<h1 class="screen-reader-text">{{ globalTitle }}</h1>
-		</header>
+		<partHeader />
 
 		<main id="part-container">
 			<section class="container">
@@ -69,9 +67,19 @@
 	</div>
 </template>
 <script>
+import partHeader from '@/components/part/header.vue';
+
 export default {
 	name: 'part3',
-}
+	components: {
+		partHeader,
+	},
+	data() {
+		return {
+			showCover: false,
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>

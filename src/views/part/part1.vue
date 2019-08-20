@@ -5,7 +5,7 @@
 		<main id="part-container">
 			<section class="container">
 
-				<h2 class="title ff-myeongjo">놀면<br>뭐 하나</h2>
+				<h2 class="title ff-myeongjo"><i class="cuscon-sns-facebook"></i>놀면<br>뭐 하나</h2>
 
 				<div class="left-image">
 					<img src="@/assets/images/contents/part1/top_img@1x.png" alt="맥주 이미지"
@@ -40,19 +40,22 @@
 </template>
 
 <script>
-	import partHeader from '@/components/part/header.vue';
+import Vue from 'vue';
+import partHeader from '@/components/part/header.vue';
 
-	export default {
-		name: 'part1',
-		components: {
-			partHeader
-		},
-		data() {
-			return {
-				showCover: false
-			}
-		}
-	}
+const EventBus = new Vue();
+
+export default {
+	name: 'part1',
+	components: {
+		partHeader,
+	},
+	data() {
+		return {
+			showCover: false,
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>

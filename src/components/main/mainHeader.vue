@@ -12,19 +12,20 @@
 
 <script>
 import Vue from 'vue';
-var EventBus = new Vue();
+
+const EventBus = new Vue();
 
 export default {
 	name: 'mainHeader',
 	mounted() {
-		var toggleBtn = this.$el.querySelector('#toggle-hidden-contents');
-		var hiddenContents = document.querySelector('#hidden-contents');
-		toggleBtn.addEventListener('click', function(event) {
+		const toggleBtn = this.$el.querySelector('#toggle-hidden-contents');
+		const hiddenContents = document.querySelector('#hidden-contents');
+		toggleBtn.addEventListener('click', (event) => {
 			event.preventDefault();
 			hiddenContents.classList.add('active');
 		});
-	}
-}
+	},
+};
 </script>
 
 <style lang="scss" scoped>

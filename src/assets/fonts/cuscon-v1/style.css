@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'cuscon';
+  src:
+    url('./fonts/cuscon.ttf?nfkvl1') format('truetype'),
+    url('./fonts/cuscon.woff?nfkvl1') format('woff'),
+    url('./fonts/cuscon.svg?nfkvl1#cuscon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'cuscon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cuscon-sns-kakaotalk:before {
+  content: "\e900";
+}
+.cuscon-arrow-left:before {
+  content: "\e901";
+}
+.cuscon-sns-facebook:before {
+  content: "\e902";
+}
+.cuscon-sns-instagram:before {
+  content: "\e904";
+}
+.cuscon-link:before {
+  content: "\e905";
+}
+.cuscon-close:before {
+  content: "\e906";
+}
+.cuscon-share:before {
+  content: "\e907";
+}
+.cuscon-sns-twitter:before {
+  content: "\e908";
+}

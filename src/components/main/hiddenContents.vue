@@ -54,10 +54,10 @@ export default {
 					part: 3,
 					title: '감성 한 줄 맥주 한 잔',
 				},
-				/*{
-					part: 4,
-					title: '맥주축제 in 신촌',
-				},*/
+				/* {
+						part: 4,
+						title: '맥주축제 in 신촌',
+					}, */
 				{
 					part: 5,
 					title: '2018 신촌맥주축제',
@@ -68,162 +68,162 @@ export default {
 					sns: 'instagram',
 					url: '#',
 					icon: {
-						x1: require( '@/assets/images/icon/sns-instagram.png' ),
-						x2: require( '@/assets/images/icon/sns-instagram@2x.png' ),
-					}
+						x1: require('@/assets/images/icon/sns-instagram.png'),
+						x2: require('@/assets/images/icon/sns-instagram@2x.png'),
+					},
 				},
 				{
 					sns: 'facebook',
 					url: 'https://facebook.com',
 					icon: {
-						x1: require( '@/assets/images/icon/sns-facebook.png' ),
-						x2: require( '@/assets/images/icon/sns-facebook@2x.png' ),
-					}
+						x1: require('@/assets/images/icon/sns-facebook.png'),
+						x2: require('@/assets/images/icon/sns-facebook@2x.png'),
+					},
 				},
 				{
 					sns: 'youtube',
 					url: 'https://youtube.com',
 					icon: {
-						x1: require( '@/assets/images/icon/sns-youtube.png' ),
-						x2: require( '@/assets/images/icon/sns-youtube@2x.png' ),
-					}
+						x1: require('@/assets/images/icon/sns-youtube.png'),
+						x2: require('@/assets/images/icon/sns-youtube@2x.png'),
+					},
 				},
-			]
-		}
+			],
+		};
 	},
 	methods: {
-		closeHiddenContents: function(event) {
+		closeHiddenContents(event) {
 			this.$el.classList.remove('active');
-		}
+		},
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/import/_mixin.scss';
+	@import '@/assets/scss/import/_mixin.scss';
 
-#hidden-contents {
-	$p: &;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 100;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.2s, visibility 0.2s;
-
-	&-inner {
-		position: absolute;
-		z-index: 2;
-		display: flex;
-		flex-direction: column;
-		padding: 50px 0;
-		width: calc( 100% - 50px );
-		height: 100%;
-		color: #4b4b4b;
-		background-color: #fff;
-		transform: translate3d(-100px, 0, 0);
-		transition: transform 0.5s;
-		transition-delay: 0.02s;
-
-		.title {
-			flex: 0 0 auto;
-			padding: 0 15px 9px;
-			font-size: 20px;
-			font-weight: 400;
-			border-bottom: 1px solid #cbcbcb;
-		}
-
-		.contents {
-			flex: 1 1 auto;
-			overflow: scroll;
-			-webkit-overflow-scrolling: touch;
-
-			ul {
-				margin: 0;
-				padding: 0;
-				list-style: none;
-
-				li {
-					padding: 35px 25px 10px;
-					border-bottom: 1px solid #f2f2f2;
-
-					&:first-child {
-						margin-top: 5px;
-					}
-
-					a {
-						display: flex;
-
-						.part {
-							flex: 0 0 auto;
-							padding-top: 2px;
-							font-size: 14px;
-							font-weight: 700;
-							letter-spacing: -1.94px;
-						}
-
-						.text {
-							flex: 1 1 auto;
-							margin-left: 10px;
-							font-size: 16px;
-						}
-					}
-				}
-			}
-		}
-
-		.sns {
-			flex: 0 0 auto;
-			display: flex;
-			justify-content: flex-end;
-			align-items: flex-end;
-			height: 90px;
-			border-bottom: 1px solid #cbcbcb;
-
-			a {
-				display: block;
-				margin: 0 5px 10px;
-
-				&:last-child {
-					margin-right: 10px;
-				}
-			}
-		}
-	}
-
-	.overlay {
+	#hidden-contents {
+		$p: &;
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 1;
-		display: flex;
-		justify-content: flex-end;
-		align-items: flex-start;
-		padding: 30px 15px;
+		z-index: 100;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.6);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.2s, visibility 0.2s;
 
-		.close {
-			@include user-select();
+		&-inner {
+			position: absolute;
+			z-index: 2;
+			display: flex;
+			flex-direction: column;
+			padding: 50px 0;
+			width: calc( 100% - 50px );
+			height: 100%;
+			color: #4b4b4b;
+			background-color: #fff;
+			transform: translate3d(-100px, 0, 0);
+			transition: transform 0.5s;
+			transition-delay: 0.02s;
+
+			.title {
+				flex: 0 0 auto;
+				padding: 0 15px 9px;
+				font-size: 20px;
+				font-weight: 400;
+				border-bottom: 1px solid #cbcbcb;
+			}
+
+			.contents {
+				flex: 1 1 auto;
+				overflow: scroll;
+				-webkit-overflow-scrolling: touch;
+
+				ul {
+					margin: 0;
+					padding: 0;
+					list-style: none;
+
+					li {
+						padding: 35px 25px 10px;
+						border-bottom: 1px solid #f2f2f2;
+
+						&:first-child {
+							margin-top: 5px;
+						}
+
+						a {
+							display: flex;
+
+							.part {
+								flex: 0 0 auto;
+								padding-top: 2px;
+								font-size: 14px;
+								font-weight: 700;
+								letter-spacing: -1.94px;
+							}
+
+							.text {
+								flex: 1 1 auto;
+								margin-left: 10px;
+								font-size: 16px;
+							}
+						}
+					}
+				}
+			}
+
+			.sns {
+				flex: 0 0 auto;
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-end;
+				height: 90px;
+				border-bottom: 1px solid #cbcbcb;
+
+				a {
+					display: block;
+					margin: 0 5px 10px;
+
+					&:last-child {
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+
+		.overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-start;
+			padding: 30px 15px;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.6);
+
+			.close {
+				@include user-select();
+			}
+		}
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			@include user-select(auto);
+
+			#{$p}-inner {
+				transform: translate3d(0, 0, 0);
+			}
+		}
+
+		@include min-w(1024) {
+			display: none !important;
 		}
 	}
-
-	&.active {
-		opacity: 1;
-		visibility: visible;
-		@include user-select(auto);
-
-		#{$p}-inner {
-			transform: translate3d(0, 0, 0);
-		}
-	}
-
-	@include min-w(1024) {
-		display: none !important;
-	}
-}
 </style>
