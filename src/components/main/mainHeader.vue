@@ -29,8 +29,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/import/_mixin.scss';
-
 #header {
 	position: fixed;
 	top: 0;
@@ -66,7 +64,12 @@ export default {
 	}
 
 	@include max-w(960) {
+		left: 0;
+		right: 0;
+		margin: 0 auto;
 		padding: 30px 15px 0;
+		max-width: 500px;
+		width: 100%;
 
 		.title {
 			display: none;

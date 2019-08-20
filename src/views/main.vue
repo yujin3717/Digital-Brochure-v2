@@ -38,7 +38,7 @@ import cover from '@/components/cover.vue';
 import mainHeader from '@/components/main/mainHeader.vue';
 import mainFooter from '@/components/main/mainFooter.vue';
 import mainSliderItem from '@/components/main/mainSliderItem.vue';
-import hiddenContents from '@/components/main/hiddenContents.vue';
+import hiddenContents from '@/components/hiddenContents/template.vue';
 
 const EventBus = new Vue();
 
@@ -53,7 +53,7 @@ export default {
 	},
 	data() {
 		return {
-			showCover: true,
+			showCover: false,
 			slideItemData: [
 				{
 					part: 1,
@@ -195,7 +195,7 @@ export default {
 			});
 		},
 		iosHeightFix(slider) {
-			window.onresize = function () {
+			window.onresize = function() {
 				document.body.height = window.innerHeight;
 			};
 			window.onresize();
@@ -219,8 +219,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/import/_mixin.scss';
-
 #main {
 	height: 100%;
 

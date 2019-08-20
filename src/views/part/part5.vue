@@ -120,17 +120,22 @@ export default {
 
 
 <style lang="scss" scoped>
-
 	#part-container {
+		background-color: #f5f5f5;
+
 		.container {
-			max-width: 375px;
+			padding-top: 100px;
+			max-width: 500px;
 			background-color: #fff;
 
 			.top-image {
-				margin-top: 85px;
-				padding-top: 100px;
-				max-width: 374px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				height: 450px;
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
 
 				.border {
 					margin: 0 auto;
@@ -229,5 +234,4 @@ export default {
 			}
 		}
 	}
-
 </style>

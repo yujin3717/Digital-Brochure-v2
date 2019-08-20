@@ -42,51 +42,51 @@ export default {
 </script>
 
 <style lang="scss">
-	#cover {
-		position: fixed;
+#cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f5f5f5;
+
+	&-inner {
+		position: relative;
+		max-width: 425px;
+		width: 100%;
+		max-height: 755px;
+		height: 100%;
+		background-size: cover;
+	}
+
+	.sc__container {
+		position: absolute;
+		padding-top: 72%;
+		left: 0;
+		top: 50%;
+		width: 100%;
+		transform: translate3d(12px, -25%, 0);
+		overflow: hidden;
+	}
+
+	.sc__container > img {
+		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: 999999;
 		width: 100%;
 		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: #f5f5f5;
-
-		&-inner {
-			position: relative;
-			max-width: 425px;
-			width: 100%;
-			max-height: 755px;
-			height: 100%;
-			background-size: cover;
-		}
-
-		.sc__container {
-			position: absolute;
-			padding-top: 72%;
-			left: 0;
-			top: 50%;
-			width: 100%;
-			transform: translate3d(12px, -25%, 0);
-			overflow: hidden;
-		}
-
-		.sc__container > img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-
-		.sc__container canvas {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
 	}
+
+	.sc__container canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
 </style>

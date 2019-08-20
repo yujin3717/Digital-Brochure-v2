@@ -42,7 +42,7 @@
 					</div>
 
 					<div class="img-title">2019년 신촌맥주축제<br>감성 한 줄, 맥주 한 잔</div>
-					<div class="caption">매년 다른 "Curation"을 통하여 새로운 맥주문화를<br>제시 하였던 신촌 맥주축제에서는 올해 20-30세대가<br>소비하는 글과 감성 그리고 건전한 맥주문화를 컨셉으로<br>제5회 신촌맥주축제를 준비하였습니다.</div>
+					<div class="caption">매년 다른 "Curation"을 통하여 새로운 맥주문화를 제시 하였던 신촌 맥주축제에서는<br>올해 20-30세대가 소비하는 글과 감성 그리고 건전한 맥주문화를 컨셉으로 제5회 신촌맥주축제를 준비하였습니다.</div>
 
 					<div class="logo">
 						<a href="http://www.moounga.co.kr" target="_blank">
@@ -81,14 +81,14 @@ export default {
 		background-color: #f5f5f5;
 
 		.container {
-			max-width: 375px;
+			max-width: 500px;
 			background-color: #fff;
 
 			.title {
 				color: #09170d;
 				font-size: 50px;
 				font-weight: 400;
-				padding: 85px 10px 40px 10px;
+				padding: 100px 10px 40px 10px;
 			}
 
 			.left-image {
@@ -113,23 +113,20 @@ export default {
 		}
 
 		.background {
-			margin-top: 30px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: 100%;
-			height: 160px;
+			margin-top: 30px;
+			padding: 65px 15px;
+			text-align: center;
 			background-size: cover;
 			background-position: center center;
 			background-repeat: no-repeat;
 
 			.caption {
 				color: #fff;
-				text-align: center;
-				vertical-align: middle;
 				font-size: 18px;
 				font-weight: 700;
-				line-height: 160px;
 			}
 		}
 

@@ -14,7 +14,7 @@
 
 				<div class="video-block">
 					<video controls>
-						<source src="@/assets/video/beer_44k-iphone8.mp4" type="video/mp4">
+						<source src="@/assets/video/beer_44k-iphone8.mp4" type="video/mp4" playsinline>
 						Your browser does not support the video tag.
 					</video>
 				</div>
@@ -84,14 +84,18 @@ export default {
 
 <style lang="scss" scoped>
 	#part-container {
+		background-color: #f5f5f5;
+
 		.container {
-			max-width: 375px;
+			padding-top: 100px;
+			max-width: 500px;
 			background-color: #fff;
 
 			.top-image {
-				margin-top: 85px;
 				padding: 0 15px 0;
 				color: #fff;
+				background-size: cover;
+				background-position: center center;
 				background-repeat: no-repeat;
 
 				.title {
@@ -177,5 +181,4 @@ export default {
 			}
 		}
 	}
-
 </style>
