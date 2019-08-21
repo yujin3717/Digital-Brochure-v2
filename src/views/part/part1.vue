@@ -94,8 +94,7 @@ export default {
 
 			.right-image {
 				position: relative;
-				padding-left: 71px;
-
+				float: right;
 
 				.caption {
 					padding-top: 30px;
@@ -110,6 +109,7 @@ export default {
 			}
 
 			.center-image {
+				clear: both;
 				padding-top: 85px;
 				text-align: center;
 

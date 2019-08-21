@@ -183,6 +183,7 @@ export default {
 			.icon {
 				position: relative;
 				padding: 0 15px;
+				max-width: 450px;
 				overflow: hidden;
 
 				.img01 {

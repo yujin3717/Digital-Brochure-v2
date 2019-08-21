@@ -35,9 +35,12 @@
       "plugin:vue/essential",
       "@vue/airbnb"
     ],
-    "rules":{
-        "indent": [2, "tab"],
-        "no-tabs": 0
+    "rules": {
+      "indent": [
+        2,
+        "tab"
+      ],
+      "no-tabs": 0
     },
     "parserOptions": {
       "parser": "babel-eslint"

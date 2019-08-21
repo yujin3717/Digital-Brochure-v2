@@ -49,7 +49,7 @@
 				<div class="map">
 					<div class="box-title">행사 안내 및 위치 안내</div>
 					<img src="@/assets/images/contents/part3/map@1x.jpg" alt="지도 이미지"
-							srcset="@/assets/images/contents/part3/map@2x.jpg 2x">
+							srcset="@/assets/images/contents/part3/map@2x.jpg 2x" class="map-image">
 					<div class="caption">제5회 신촌맥주축제<br>2019.09.20(금) - 09.22(일)<br>서울특별시 서대문구 창천동 연세로</div>
 				</div>
 
@@ -163,6 +163,12 @@ export default {
 					font-weight: 700;
 					color: #09170d;
 				}
+
+				img {
+					display: block;
+					margin: 0 auto;
+				}
+
 				.caption {
 					padding-top: 10px;
 					margin: 0 auto 20px;
